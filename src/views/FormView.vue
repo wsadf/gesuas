@@ -3,7 +3,7 @@
     <main-component>
       <b-row class="pt-3">
         <b-col md="12" lg="8" xl="12" class="text-left">
-          <b-form @submit="onSubmit">
+          <b-form data-cy="your-form" @submit="onSubmit">
             <legend class="p-2 bg-legend text-white">Informações Pessoais</legend>
             <b-form-group label="Nome:" label-for="input-name">
               <b-form-input id="input-name" v-model="form.name" type="text" required @blur="validateField('name')" />
@@ -313,7 +313,6 @@ export default {
     },
 
     newRegister() {
-      console.log(this.$route);
       return this.$route.name === 'new-register';
     },
     txtTitle() {
