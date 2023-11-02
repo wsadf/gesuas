@@ -7,6 +7,7 @@ Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, edi
 
 ### Tecnologias do projeto
 **Bootstrap:** Escolhi o Bootstrap porque se trata de um site simples, com poucas estilizações, e é uma biblioteca que já domino.
+
 **Vue:** Optei por utilizar Vue devido à minha familiaridade com a tecnologia, o que facilitou o desenvolvimento da aplicação com maior velocidade e agilidade.
 
 **Axios:** Utilizei o Axios para realizar a requisição dos dados da API, pois é uma biblioteca com a qual já estou familiarizado e que oferece facilidade de uso.
