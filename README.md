@@ -21,6 +21,7 @@ Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, edi
 - Após o cadastro ser realizado com sucesso é possivel visualizar(modal), editar e excluir o registro.
 - Modal com a visualização do contato cadastrado.
 - Ao interromper o JSON Server é exibido um aviso na tela de cadastro "Desculpe, mas houve um erro ao buscar os dados!".
+- Alguns ajustes para ser melhor exibido em dispositivos menores.
 
 # Configuração do Vue
 ## Project setup
