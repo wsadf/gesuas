@@ -1,0 +1,24 @@
+{
+  "contacts": [
+    {
+      "name": "Wesley Soares",
+      "email": "wesley@tecnoig.com.br",
+      "phone": "(31) 98803-1313",
+      "zipCode": "30870-120",
+      "number": "615",
+      "address": "Rua Porto Velho",
+      "complement": "",
+      "neighborhood": "Glória",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "sexo": "masculino",
+      "corRaca": "preta",
+      "rg": "50.489.628-3",
+      "nameSocial": "teste",
+      "dataNascimento": "09/04/1987",
+      "gender": "mulher_cis",
+      "cpf": "016.032.176-06",
+      "id": 1
+    }
+  ]
+}

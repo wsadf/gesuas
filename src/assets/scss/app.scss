@@ -1,0 +1,13 @@
+// Custom Bootstrap Variables
+$body-bg: #fff;
+$font-family-sans-serif: 'Noto Sans', sans-serif;
+$primary: #171559;
+$secondary: #4B4B4B;
+$red: #F26363;
+$success: #2a9d8f;
+$warning: #e9c46a;
+$danger: #9b2226;
+$info: #457b9d;
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
