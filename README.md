@@ -14,6 +14,8 @@ Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, edi
 
 **Cypress:** Utilizei o Cypress para realizar os testes automatizados, devido a minha familiaridade com a tecnologia, pois já trabalhei com o mesmo em projetos anteriores.
 
+**Vuex** Utilizado para gerenciar o estado das aplicações do projeto.
+
 ### Projeto composto por:
 - Foi adicionado um input CEP no cadastro, que ao inserir o cep correto, automaticamente já são carregados os campos de bairro, endereço e cidade utilizando da import **ApiCep from '@/api/cep**.
 - Senão tiver nenhum registro cadastrado é exibido uma tela com a frase "Você ainda não possui nenhum contato cadastrado.", com um botão para redirecionar para a página de cadastros.
