@@ -13,14 +13,12 @@
         </b-button>
       </div>
     </main-component>
-    <footer-component />
   </div>
 </template>
 
 <script>
 import { BButton } from 'bootstrap-vue'
 
-import FooterComponent from '@/components/FooterComponent'
 import MainComponent from '@/components/MainComponent'
 
 export default {
@@ -28,7 +26,6 @@ export default {
 
   components: {
     BButton,
-    FooterComponent,
     MainComponent
   },
 

@@ -1,9 +1,9 @@
 {
   "contacts": [
     {
-      "name": "Wesley Soares",
+      "name": "Ana Liz Alves",
       "email": "wesley@tecnoig.com.br",
-      "phone": "(31) 98803-1313",
+      "phone": "(31) 98803-1327",
       "zipCode": "30870-120",
       "number": "615",
       "address": "Rua Porto Velho",
@@ -12,11 +12,10 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "sexo": "masculino",
-      "corRaca": "preta",
+      "corRaca": "branca",
       "rg": "50.489.628-3",
-      "nameSocial": "teste",
-      "dataNascimento": "09/04/1987",
-      "gender": "mulher_cis",
+      "nameSocial": "ts",
+      "dataNascimento": "23/11/2000",
       "cpf": "016.032.176-06",
       "id": 1
     }

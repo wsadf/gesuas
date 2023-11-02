@@ -7,7 +7,9 @@
             <legend class="p-2 bg-legend text-white">Informações Pessoais</legend>
             <b-form-group label="Nome:" label-for="input-name">
               <b-form-input id="input-name" v-model="form.name" type="text" required @blur="validateField('name')" />
-              <p class="text-danger" v-if="showError['name']">Preenchimento obrigatório</p>
+              <p class="text-danger" v-if="showError['name']">
+        {{ showError['name'] === 'required' ? 'Preenchimento obrigatório' : 'O campo não pode ser um número' }}
+      </p>
             </b-form-group>
 
             <b-form-group label="Nome Social:" label-for="input-name-social">
@@ -163,17 +165,40 @@
               </b-col>
             </b-row>
             <b-row class="d-flex justify-content-end mt-4">
-              <b-button type="reset" class="mr-4 rounded btn-lg btn btn-outline-primary bg-transparent text-primary" variant="primary" @click="clearForm">Cancelar</b-button>
-              <b-button type="submit" variant="primary" class="mr-3 btn-lg" :disabled="saveLoading">
-                <template v-if="saveLoading">
-                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
-                  Salvando...
-                </template>
-                <template v-else>
-                  Cadastrar
-                </template>
-              </b-button>
-            </b-row>
+    <b-col
+      cols="12"
+      md="auto"
+      class="text-md-right mb-3"
+    >
+      <b-button
+        type="reset"
+        class="rounded btn btn-outline-primary bg-transparent text-primary btn-block"
+        variant="primary"
+        @click="clearForm"
+      >
+        Cancelar
+      </b-button>
+    </b-col>
+    <b-col
+      cols="12"
+      md="auto"
+    >
+      <b-button
+        type="submit"
+        class="rounded btn btn-primary btn-block"
+        variant="primary"
+        :disabled="saveLoading"
+      >
+        <template v-if="saveLoading">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+          Salvando...
+        </template>
+        <template v-else>
+          Cadastrar
+        </template>
+      </b-button>
+    </b-col>
+  </b-row>
           </b-form>
         </b-col>
       </b-row>
@@ -200,12 +225,9 @@
 <script>
 import ApiCep from '@/api/cep'
 import ApiContacts from '@/api/contacts'
-
 import { mapActions, mapGetters, mapState } from 'vuex';
 import { mask } from 'vue-the-mask'
 import { BAlert, BButton, BCol, BForm, BModal, BRow, BSpinner } from 'bootstrap-vue'
-
-// import BreadCrump from '@/components/BreadCrump'
 import MainComponent from '@/components/MainComponent'
 
 function initialForm() {
@@ -237,7 +259,6 @@ export default {
     BModal,
     BRow,
     BSpinner,
-    // BreadCrump,
     MainComponent
   },
 
@@ -292,6 +313,7 @@ export default {
     },
 
     newRegister() {
+      console.log(this.$route);
       return this.$route.name === 'new-register';
     },
     txtTitle() {
@@ -333,7 +355,6 @@ export default {
     ...mapActions(['getAllContacts']),
 
     clearForm() {
-      // const objClear = Object.keys(this.form).reduce((acc, curr) => ({...acc, [curr]: ""}), {});
       this.form = initialForm();
     },
 
@@ -352,7 +373,7 @@ export default {
     ,
 
     validateCPF() {
-      const cpf = this.form.cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+      const cpf = this.form.cpf.replace(/\D/g, '');
 
       if (cpf.length !== 11 || cpf.match(/^(.)\1+$/)) {
         this.showError.cpf = true;
@@ -364,7 +385,7 @@ export default {
     },
 
     validateRG() {
-      const rg = this.form.rg.replace(/\D/g, ''); // Remove caracteres não numéricos
+      const rg = this.form.rg.replace(/\D/g, '');
 
       if (!rg) {
         this.showError.rg = true;
@@ -379,7 +400,14 @@ export default {
     },
 
     validateField(fieldName) {
-      this.showError[fieldName] = !this.form[fieldName];
+      if (!this.form[fieldName]) {
+        this.showError[fieldName] = 'required';
+      } else if (!isNaN(this.form[fieldName])) {
+        this.form[fieldName] = '';
+        this.showError[fieldName] = 'number';
+      } else {
+        this.showError[fieldName] = null;
+      }
     },
 
     validateDataNascimento() {
@@ -461,12 +489,12 @@ export default {
 
       if (!this.form.sexo) {
         this.showError['sexo'] = true;
-        return; // Impede o envio se o campo não estiver preenchido
+        return;
       }
 
       if (!this.form.corRaca) {
         this.showError['corRaca'] = true;
-        return; // Impede o envio se o campo não estiver preenchido
+        return;
       }
 
       if (this.newRegister) {
@@ -491,7 +519,6 @@ export default {
               this.showModal(this.txtModalNotFound);
             } else {
               const { logradouro: address, bairro: neighborhood, localidade: city, uf: state } = resp.data;
-              // Object.assign(this.form, { address, neighborhood, city, state });
               this.form = { ...this.form, address, neighborhood, city, state };
             }
           })
