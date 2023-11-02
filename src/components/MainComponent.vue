@@ -35,4 +35,10 @@ export default {
       margin-left: 250px;
       width: calc(100% - 250px); /* Calcula a largura do conteúdo */
     }
+    @media (max-width: 767px) {
+  .content {
+    margin-left: 160px;
+      width: calc(100% - 160px); 
+  }
+}
 </style>

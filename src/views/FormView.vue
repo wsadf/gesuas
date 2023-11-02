@@ -1,7 +1,7 @@
 <template>
   <div>
     <main-component>
-      <b-row class="pt-5">
+      <b-row class="pt-3">
         <b-col md="12" lg="8" xl="12" class="text-left">
           <b-form @submit="onSubmit">
             <legend class="p-2 bg-legend text-white">Informações Pessoais</legend>
