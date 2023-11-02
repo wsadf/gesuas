@@ -65,3 +65,11 @@ E rodar:
 npm start
 ```
 Para verificar se o servidor foi levantado corretarmente, acessar a url [http://localhost:3000](http://localhost:3000) para visualizar no browser.
+
+# Configuração do Cypress
+
+no terminal rodar:
+```
+npx cypress open
+```
+
