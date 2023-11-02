@@ -14,11 +14,11 @@
       <b-icon class="mr-2" icon="chevron-left" variant="secondary" style="width: 8px; height: 8px;" />
       Coordenação
     </span>
-    <b-nav-item to="/" class="d-flex align-items-center">
+    <b-nav-item :class="{ 'active': isActive('/') }" to="/">
       <b-icon class="mr-2" icon="house-door-fill" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
       Início
     </b-nav-item>
-    <b-nav-item to="/new-register" active>
+    <b-nav-item :class="{ 'active': isActive('/new-register') }" to="/new-register">
       <b-icon class="mr-2" icon="file-earmark-plus" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
       Cadastro
     </b-nav-item>
@@ -50,6 +50,12 @@ export default {
         BIcon
     },
 
+    methods: {
+    isActive(route) {
+      return this.$route.path === route;
+    },
+  },
+
 }
 </script>
 
@@ -65,14 +71,16 @@ export default {
     height: 40px;
     margin-bottom: 20px;
 }
-.nav-link.active {
-  background-color: #F26363;
+.active {
+  a{
+    background-color: #F26363;
   color: white;
   font-weight: 700;
+  }
 }
 
 /* Estilos para o ícone do nav-item ativo */
-.nav-link.active svg path {
+.active svg path {
   fill: white;
 }
 .max-w-240 {
