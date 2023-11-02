@@ -16,23 +16,23 @@
     </span>
     <b-nav-item :class="{ 'active': isActive('/') }" to="/">
       <b-icon class="mr-2" icon="house-door-fill" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
-      Início
+      <span class="d-none d-md-inline">Início</span>
     </b-nav-item>
     <b-nav-item :class="{ 'active': isActive('/new-register') }" to="/new-register">
       <b-icon class="mr-2" icon="file-earmark-plus" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
-      Cadastro
+      <span class="d-none d-md-inline">Cadastro</span>
     </b-nav-item>
     <b-nav-item>
       <b-icon class="mr-2" icon="calendar3-event" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
-      Agenda
+      <span class="d-none d-md-inline">Agenda</span>
     </b-nav-item>
     <b-nav-item>
       <b-icon class="mr-2" icon="person-fill" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
-      Perfil
+      <span class="d-none d-md-inline">Perfil</span>
     </b-nav-item>
     <b-nav-item>
       <b-icon class="mr-2" icon="file-earmark-bar-graph" variant="secondary" style="width: 18px; height: 18px;"></b-icon>
-      Relatórios
+      <span class="d-none d-md-inline">Relatórios</span>
     </b-nav-item>
     <img src="../assets/felipe.svg" class="felipe-image ml-2">
   </b-nav>
@@ -83,8 +83,19 @@ export default {
 .active svg path {
   fill: white;
 }
-.max-w-240 {
-  max-width: 240px;
+@media (min-width: 768px) {
+  .max-w-240 {
+    max-width: 240px;
+  }
+}
+
+/* Estilos para a navegação pai em resoluções menores */
+@media (max-width: 767px) {
+  .max-w-240 {
+    max-width: 160px;
+    overflow: hidden;
+    .nav-item {text-align: center;}
+  }
 }
 .border-top {
   border-top: 1px solid #ccc; /* Adicione o estilo da borda superior desejada */
