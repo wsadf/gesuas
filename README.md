@@ -1,8 +1,27 @@
-# cadastro-clientes-vue
+# Cadastro de contatos
 
-Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o JSON Server.
+# Projeto Gesuas
+## Teste de front-end para o processo de seleção da empresa Gesuas.
 
-É possível visualizar o build do site no link [GitHub](https://samuel-silva.github.io/cadastro-contatos-vue-build/). Este link é com API apenas modo de leitura, não sendo possível editar, excluir e criar um novo contato.
+Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o **JSON Server**.
+
+### Tecnologias do projeto
+**Bootstrap:** Escolhi o Bootstrap porque se trata de um site simples, com poucas estilizações, e é uma biblioteca que já domino.
+
+**Vue:** Optei por utilizar Vue devido à minha familiaridade com a tecnologia, o que facilitou o desenvolvimento da aplicação com maior velocidade e agilidade.
+
+**Axios:** Utilizei o Axios para realizar a requisição dos dados da API, pois é uma biblioteca com a qual já estou familiarizado e que oferece facilidade de uso.
+
+**Cypress:** Utilizei o Cypress para realizar os testes automatizados, devido a minha familiaridade com a tecnologia, pois já trabalhei com o mesmo em projetos anteriores.
+
+### Projeto composto por:
+- Foi adicionado um input CEP no cadastro, que ao inserir o cep correto, automaticamente já são carregados os campos de bairro, endereço e cidade utilizando da import **ApiCep from '@/api/cep**.
+- Senão tiver nenhum registro cadastrado é exibido uma tela com a frase "Você ainda não possui nenhum contato cadastrado.", com um botão para redirecionar para a página de cadastros.
+- Ao inserir uma url inválida é exibida uma pagina de erro.
+- Após o cadastro ser realizado com sucesso é possivel visualizar(modal), editar e excluir o registro.
+- Modal com a visualização do contato cadastrado.
+- Ao interromper o JSON Server é exibido um aviso na tela de cadastro "Desculpe, mas houve um erro ao buscar os dados!".
+- Alguns ajustes para ser melhor exibido em dispositivos menores e favicon.
 
 # Configuração do Vue
 ## Project setup
